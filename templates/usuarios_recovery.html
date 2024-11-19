@@ -2,7 +2,10 @@
 {% block conteudo %}
     <ul>
     {% for u in usuarios %}
-        <li>{{u.nome}} - {{u.email}} </li>
+        <li>{{u.nome}} - {{u.email}} - 
+            <a href="{{url_for('usuarios.update', id=u.id)}}">editar</a> 
+            <a href="{{url_for('usuarios.delete', id=u.id)}}">excluir</a> 
+        </li>
     {% endfor %}
     </ul>
 {% endblock %}
