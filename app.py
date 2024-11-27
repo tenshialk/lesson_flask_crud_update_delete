@@ -1,12 +1,14 @@
-from flask import Flask, render_template, redirect, url_for, flash , request
+from flask import Flask, render_template, redirect, url_for, flash, request
 from utils import db
 import os
 from flask_migrate import Migrate
 from models.Usuario import Usuario
 from controllers.Usuario import bp_usuarios
+from controllers.Pizza import bp_pizzas  # Importando o blueprint de Pizza
 
 app = Flask(__name__)
 app.register_blueprint(bp_usuarios, url_prefix='/usuarios')
+app.register_blueprint(bp_pizzas, url_prefix='/pizzas')  # Registrando o blueprint de Pizza
 
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 db_host = os.getenv('DB_HOST')

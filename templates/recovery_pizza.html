@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<h2>Lista de Pizzas</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Sabor</th>
+            <th>Imagem</th>
+            <th>Ingredientes</th>
+            <th>Preço</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pizza in pizzas %}
+        <tr>
+            <td>{{ pizza.sabor }}</td>
+            <td>{{ pizza.imagem }}</td>
+            <td>{{ pizza.ingredientes }}</td>
+            <td>{{ pizza.preco }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
