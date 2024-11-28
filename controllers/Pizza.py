@@ -8,7 +8,6 @@ bp_pizzas = Blueprint('pizzas', __name__)
 def create():
     if request.method == 'POST':
         sabor = request.form['sabor']
-        imagem = request.form['imagem']
         ingredientes = request.form['ingredientes']
         preco = float(request.form['preco'])
 

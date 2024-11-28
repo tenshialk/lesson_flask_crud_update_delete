@@ -10,7 +10,6 @@ class Pizza(db.Model):
 
     def __init__(self, sabor, imagem, ingredientes, preco):
         self.sabor = sabor
-        self.imagem = imagem
         self.ingredientes = ingredientes
         self.preco = preco
 
